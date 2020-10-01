@@ -28,4 +28,4 @@ t = twitter.Api(consumer_key=consumer_key,
 t.PostUpdate(status=('.@bkives says:\n"The Red River level for ' + date +
                      ' is currently: ' + str(first_date) + ' feet James as of ' + str(hour)))
 
-time.sleep(10800)
+time.sleep(150)
