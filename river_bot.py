@@ -15,10 +15,10 @@ hour = pd.to_datetime(data.iloc[0]['reading_date']).strftime('%H:%M')
 
 # send tweet
 #api details
-consumer_key = environ[CONSUMER_KEY]
-consumer_secret = environ[CONSUMER_SECRET]
-access_token = environ[ACCESS_TOKEN]
-access_secret = environ[ACCESS_SECRET]
+consumer_key = environ['CONSUMER_KEY']
+consumer_secret = environ['CONSUMER_SECRET']
+access_token = environ['ACCESS_TOKEN']
+access_secret = environ['ACCESS_SECRET']
 
 t = twitter.Api(consumer_key=consumer_key,
                   consumer_secret=consumer_secret,
