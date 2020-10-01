@@ -32,4 +32,4 @@ while True:
     t.PostUpdate(status=('Bartley Kives says:\n"The Red River level for ' + date +
                          ' is: ' + str(first_date) + ' feet James. Next update at: ' + str(next_update) + '.'))
 
-    time.sleep(150)
+    time.sleep(10800)
