@@ -28,14 +28,18 @@ while True:
     access_token = environ['ACCESS_TOKEN']
     access_secret = environ['ACCESS_SECRET']
     
-
     #charting data
     chr = data.iloc[0:360,[2]]
     plt.figure(figsize=(9,4.8), dpi=60)
     plt.plot(chr.index, chr['james_feet'], color='#00607a', alpha=0.8, linewidth=5)
-    plt.title(str(datetime.datetime.now()), fontsize=22, pad=10) #Last 12 months of James Ave gauge readings
+    plt.title('Last 12 months of James Ave gauge readings', fontsize=24, pad=15)
+    plt.text(x=chr.index[-1], y=0.75, s='last reading: ' + data.index[0].strftime('%Y-%m-%d'), fontdict={'fontsize':12})
     plt.xticks(fontsize=16, rotation=15)
     plt.yticks(fontsize=16)
+    plt.grid(b=True, which='major', axis='y')
+    plt.ylim(bottom=0)
+    plt.gca().spines['right'].set_color('none')
+    plt.gca().spines['top'].set_color('none')
     plt.tight_layout()        
     plt.savefig('chart.png', dpi=60)
    
@@ -43,9 +47,11 @@ while True:
                       consumer_secret=consumer_secret,
                       access_token_key=access_token,
                       access_token_secret=access_secret)
+                      
+                      
 
     t.PostUpdate(status=('The Red River level for ' + date +
-                         ' is: ' + str(first_value) + ' feet James.\nNext update at: ' + str(next_update) + '.'),
+                         ' is: ' + str(first_value) + ' feet James.\nNext update at: ' + str(next_update) + '. #mbpoli'),
                          media='chart.png')
 
     #time.sleep(10800)
