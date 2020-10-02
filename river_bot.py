@@ -54,5 +54,4 @@ while True:
                          ' is: ' + str(first_value) + ' feet James.\nNext update at: ' + str(next_update) + '. #mbpoli'),
                          media='chart.png')
 
-    #time.sleep(10800)
-    time.sleep(180)
+    time.sleep(28800)
