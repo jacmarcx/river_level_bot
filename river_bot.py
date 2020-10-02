@@ -18,7 +18,7 @@ while True:
     first_value = data.iloc[0]['james_feet']
     date = data.index[0].strftime('%b %d, %Y')
     hour = data.index[0].strftime('%H:%M')
-    next_update = datetime.datetime.now() + datetime.timedelta(hours=3)
+    next_update = datetime.datetime.now() + datetime.timedelta(hours=8)
     next_update = next_update.strftime('%#I:%M %p')
         
     # send tweet
